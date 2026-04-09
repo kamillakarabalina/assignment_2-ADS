@@ -3,7 +3,7 @@ import java.util.*;
 public class Task4 {
     public static void main(String[] args) {
 
-        Queue<String> queue = new LinkedList<>();
+        Queue<String> queue = new LinkedList<>();  //fifo
 
         queue.add("Electricity Bill");
         System.out.println("Added: Electricity Bill");
@@ -13,7 +13,7 @@ public class Task4 {
 
         System.out.println();
 
-        System.out.println("Processing: " + queue.poll());
+        System.out.println("Processing: " + queue.poll());   // берёт первый элемент и удаляет
 
         System.out.println();
 

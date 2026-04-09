@@ -11,13 +11,13 @@ public class Task2 {
         String name = sc.next();
 
         for (BankAccount a : list) {
-            if (a.username.equalsIgnoreCase(name)) {
+            if (a.username.equalsIgnoreCase(name)) {   // как хочешь вводи им
 
                 System.out.print("Deposit: ");
                 double d = sc.nextDouble();
                 a.balance += d;
 
-                System.out.print("Withdraw: ");
+                System.out.print("Withdraw: ");  // снять деньга
                 double w = sc.nextDouble();
 
                 if (w <= a.balance) {

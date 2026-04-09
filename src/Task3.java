@@ -3,7 +3,7 @@ import java.util.*;
 public class Task3 {
     public static void main(String[] args) {
 
-        Stack<String> stack = new Stack<>();
+        Stack<String> stack = new Stack<>(); //lifo
 
         stack.push("Deposit 50000 to Ali");
         stack.push("Withdraw 20000 from Ali");
@@ -16,7 +16,7 @@ public class Task3 {
 
         System.out.println();
 
-        System.out.println("Last transaction: " + stack.peek());
+        System.out.println("Last transaction: " + stack.peek());  //берет первый элемент
 
         String removed = stack.pop();
         System.out.println("Undo -> " + removed + " removed");

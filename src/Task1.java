@@ -1,47 +1,39 @@
-import java.util.LinkedList;
-import java.util.Scanner;
-
 public class Task1 {
+
+    static class Node {
+        int accountNumber;
+        String username;
+        double balance;
+        Node next;
+
+        Node(int accountNumber, String username, double balance) {
+            this.accountNumber = accountNumber;
+            this.username = username;
+            this.balance = balance;
+        }
+    }
+
     public static void main(String[] args) {
-        LinkedList<BankAccount> list = new LinkedList<>();
-        Scanner sc = new Scanner(System.in);
 
-        list.add(new BankAccount(1, "Ali", 150000));
-        list.add(new BankAccount(2, "Sara", 220000));
+        Node first = new Node(1, "Ali", 150000);
+        Node second = new Node(2, "Sara", 220000);
 
-        System.out.print("Enter account number: ");
-        int num = sc.nextInt();
+        first.next = second;
 
-        System.out.print("Enter username: ");
-        String user = sc.next();
+        Node third = new Node(3, "Kama", 300000);
+        second.next = third;
 
-        System.out.print("Enter balance: ");
-        double bal = sc.nextDouble();
+        Node current = first;
 
-        list.add(new BankAccount(num, user, bal));
-        System.out.println("Account added successfully");
-        System.out.println();
+        System.out.println("Accounts:");
 
-        System.out.println("Accounts List:");
-        for (BankAccount a : list) {
-            a.show();
-        }
+        while (current != null) {
+            System.out.println("Account Number: " + current.accountNumber);
+            System.out.println("Username: " + current.username);
+            System.out.println("Balance: " + current.balance);
+            System.out.println();
 
-        System.out.print("Search username: ");
-        String name = sc.next();
-
-        boolean found = false;
-
-        for (BankAccount a : list) {
-            if (a.username.equalsIgnoreCase(name)) {
-                System.out.println("Account found:");
-                a.show();
-                found = true;
-            }
-        }
-
-        if (!found) {
-            System.out.println("Account not found");
+            current = current.next;
         }
     }
 }
